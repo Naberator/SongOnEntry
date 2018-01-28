@@ -1,6 +1,5 @@
 # exclude everything except our pictures, the audio to play and the runner
     /*
-    !/yarden.jpg
-    !/ziv.jpg
-    !/zivoy.mp3
+    !/photos
+    !/songs
     !/initTest.py

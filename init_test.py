@@ -14,7 +14,7 @@ def playZiv():
     global hasPlayedZiv
     if not hasPlayedZiv:
         hasPlayedZiv = True
-        soundToPlayZiv = pyglet.media.load('zivoy.mp3', streaming=False)
+        soundToPlayZiv = pyglet.media.load('songs/zivoy.mp3', streaming=False)
         print("Played Ziv: " + str(hasPlayedZiv))
         soundToPlayZiv.play()
         hasPlayedZiv = True
@@ -33,8 +33,8 @@ playOptions = {
 }
 
 # Load a sample picture and learn how to recognize it.
-yarden_image = face_recognition.load_image_file("yarden.jpg")
-ziv_image = face_recognition.load_image_file("ziv.jpg")
+yarden_image = face_recognition.load_image_file("photos/yarden.jpg")
+ziv_image = face_recognition.load_image_file("photos/ziv.jpg")
 
 ziv_face_encoding = face_recognition.face_encodings(ziv_image)[0]
 yarden_face_encoding = face_recognition.face_encodings(yarden_image)[0]
