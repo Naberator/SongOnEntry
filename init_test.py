@@ -2,6 +2,7 @@
 import face_recognition
 import cv2
 import pyglet
+import os
 
 # Please read face_recognition examples docs
 
@@ -10,11 +11,13 @@ video_capture = cv2.VideoCapture(0)
 hasPlayedZiv = False
 hasPlayedYarden = False
 
+basePath = os.path.dirname(__file__)
+
 def playZiv():
     global hasPlayedZiv
     if not hasPlayedZiv:
         hasPlayedZiv = True
-        soundToPlayZiv = pyglet.media.load('songs/zivoy.mp3', streaming=False)
+        soundToPlayZiv = pyglet.media.load(basePath + '/songs/zivoy.mp3', streaming=False)
         print("Played Ziv: " + str(hasPlayedZiv))
         soundToPlayZiv.play()
         hasPlayedZiv = True
@@ -33,8 +36,8 @@ playOptions = {
 }
 
 # Load a sample picture and learn how to recognize it.
-yarden_image = face_recognition.load_image_file("photos/yarden.jpg")
-ziv_image = face_recognition.load_image_file("photos/ziv.jpg")
+yarden_image = face_recognition.load_image_file(basePath + "/photos/yarden.jpg")
+ziv_image = face_recognition.load_image_file(basePath + "/photos/ziv.jpg")
 
 ziv_face_encoding = face_recognition.face_encodings(ziv_image)[0]
 yarden_face_encoding = face_recognition.face_encodings(yarden_image)[0]
