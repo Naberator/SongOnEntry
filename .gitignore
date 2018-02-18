@@ -1,5 +1,6 @@
 # exclude everything except our pictures, the audio to play and the runner
     /*
-    !/photos
+    !/data
     !/songs
     !/initTest.py
+    !/web

@@ -12,6 +12,7 @@ hasPlayedYarden = False
 
 basePath = os.path.dirname(__file__)
 
+
 def playZiv():
     global hasPlayedZiv
     if not hasPlayedZiv:
@@ -26,7 +27,7 @@ def playYarden():
     if not hasPlayedYarden:
         hasPlayedYarden = True
         #soundToPlayYarden = pyglet.media.load('', streaming=False)
-        print("Played Yarden: " + hasPlayedYarden)
+        print("Played Yarden: " + str(hasPlayedYarden))
         hasPlayedYarden = True
 
 playOptions = {
@@ -34,9 +35,14 @@ playOptions = {
     1 : playYarden
 }
 
+# Init people
+for root, persons, files in os.walk(basePath + '/data', topdown=False):
+    for name in persons:
+        print(os.path.join(root, name))
+print('basePath: ' + str(basePath))
 # Load a sample picture and learn how to recognize it.
-yarden_image = face_recognition.load_image_file(basePath + "/photos/yarden.jpg")
-ziv_image = face_recognition.load_image_file(basePath + "/photos/ziv.jpg")
+yarden_image = face_recognition.load_image_file(basePath + "/data/yarden/pic/yarden.jpg")
+ziv_image = face_recognition.load_image_file(basePath + "/data/ziv/pic/ziv.jpg")
 
 ziv_face_encoding = face_recognition.face_encodings(ziv_image)[0]
 yarden_face_encoding = face_recognition.face_encodings(yarden_image)[0]
