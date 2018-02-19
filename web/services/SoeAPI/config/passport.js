@@ -12,7 +12,7 @@ const PassportJWT = require('passport-jwt'),
             secretOrKet: config.secret,
             jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken()
         };
-
+        console.log(parameters.secretOrKet)
         passport.use(new Strategy(parameters, (payload, done) => {
             User.findOne({ id: payload.id }, (error, user) => {
                 if (error) return done(error, false);

@@ -1,0 +1,32 @@
+{
+  "name": "soe",
+  "version": "1.0.0",
+  "description": "Web UI for SoE",
+  "main": "index.js",
+  "_moduleAliases": {
+    "@root": ".",
+    "@Soe": "./services/SoeAPI",
+    "@SoeModels": "./services/SoeAPI/app/models",
+    "@SoeAPI": "./services/SoeAPI/config/app.js",
+    "@config": "./services/SoeAPI/config/index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.1",
+    "module-alias": "^2.0.6",
+    "mongoose": "^5.0.6",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
