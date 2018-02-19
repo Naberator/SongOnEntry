@@ -20,4 +20,4 @@ const PassportJWT = require('passport-jwt'),
                 else done(null, false);
             });
         }));
-    };
+    }

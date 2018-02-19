@@ -19,7 +19,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(passport.initialize());
 
-app.set('RonSwanson', config);
+app.set('RonSwanson', config.secret);
 
 consign({ cwd: 'services' })
     .include('SoeAPI/app/setup')
